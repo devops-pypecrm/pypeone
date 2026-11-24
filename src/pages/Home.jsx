@@ -44,8 +44,8 @@ export default function Home() {
     <>
       <Seo title="PypeOne — CRM, ERM and school management from one team" />
       <section className="hero center">
-        <div className="blob" style={{ width: 320, height: 320, background: '#7fdcaa', left: '-60px', top: 40 }} />
-        <div className="blob" style={{ width: 280, height: 280, background: '#c5f08a', right: '-40px', top: 120, animationDelay: '-4s' }} />
+        <div className="blob" style={{ width: 320, height: 320, background: '#ffb77a', left: '-60px', top: 40 }} />
+        <div className="blob" style={{ width: 280, height: 280, background: '#ffd37a', right: '-40px', top: 120, animationDelay: '-4s' }} />
         <div className="wrap" style={{ position: 'relative' }}>
           <Reveal><Link to="/products" className="pill"><b>PypeOne</b> Three products, one bundle →</Link></Reveal>
           <Reveal delay={0.05}><h1 className="h1">The software that runs your <span className="grad-text">growth and operations</span></h1></Reveal>
@@ -112,7 +112,7 @@ export default function Home() {
       <section className="section dark">
         <div className="wrap" style={{ maxWidth: 900 }}>
           <SectionHead eyebrow="What changes for each person" title="Less chasing. More time for what matters." />
-          <Carousel slides={PERSONAS} render={([t, d]) => <div className="center"><span className="badge" style={{ background: '#1d4029', color: '#bfe8cf' }}>{t}</span><p className="quote">{d}</p></div>} />
+          <Carousel slides={PERSONAS} render={([t, d]) => <div className="center"><span className="badge" style={{ background: '#4a2c14', color: '#ffd9b3' }}>{t}</span><p className="quote">{d}</p></div>} />
         </div>
       </section>
 

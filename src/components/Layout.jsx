@@ -120,7 +120,7 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <Logo light /><p>PypeCRM for any team that sells, PypeERM for educational institutions, and Pype Campus for schools.</p>
-            {done ? <p style={{ marginTop: 18, color: '#7ff0be' }}>You’re on the list ✓</p> : <form className="subscribe" onSubmit={(e) => { e.preventDefault(); setDone(true); }}><input type="email" required placeholder="Your email" aria-label="Email" /><button>Subscribe</button></form>}
+            {done ? <p style={{ marginTop: 18, color: '#ffc999' }}>You’re on the list ✓</p> : <form className="subscribe" onSubmit={(e) => { e.preventDefault(); setDone(true); }}><input type="email" required placeholder="Your email" aria-label="Email" /><button>Subscribe</button></form>}
             <div className="site-links">{PRODUCT_SITES.map((p) => <a key={p.key} href={p.url} target="_blank" rel="noopener noreferrer">{p.domain} ↗</a>)}</div><div className="social">{['X', 'in', 'f', '▶', 'ig'].map((s) => <a key={s} href="#" aria-label={s} onClick={(e) => e.preventDefault()}>{s}</a>)}</div>
           </div>
           {FOOTER.map((c) => <div key={c.title}><h6>{c.title}</h6><ul>{c.links.map(([l, to]) => <li key={to}><Link to={to}>{l}</Link></li>)}</ul></div>)}

@@ -6,7 +6,7 @@ export function Logo({ light }) {
   return (
     <Link to="/" className="logo" aria-label="PypeOne home" style={light ? { color: '#fff' } : undefined}>
       <svg className="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#0b8f5b" /><stop offset=".6" stopColor="#27c470" /><stop offset="1" stopColor="#9bd94b" /></linearGradient></defs>
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#d9480f" /><stop offset=".6" stopColor="#f26a1b" /><stop offset="1" stopColor="#f5a524" /></linearGradient></defs>
         <rect width="32" height="32" rx="9" fill="url(#lg)" /><path d="M11 9h6a5 5 0 010 10h-3v4h-3z" fill="#fff" />
       </svg>
       PypeOne

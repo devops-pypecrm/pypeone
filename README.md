@@ -8,7 +8,7 @@ The public website for **PypeOne**, a bundle of three products with different au
 | **PypeERM** | ERP for **educational institutions only**: admissions, study centres, finance, HR, LMS, ops | `Pype-ERM` repo: Prisma schema, `FeaturesPage.tsx`, `LandingMore.tsx` |
 | **Pype Campus** | School management: fees, attendance, exams, transport, portal (audience: schools) | `report/Pype_Campus_Report.pdf` and pitch decks |
 
-Vite + React + React Router. Font: Plus Jakarta Sans (variable, weights 400/500/600/650). Green theme. No third-party assets.
+Vite + React + React Router. Font: Plus Jakarta Sans (variable, weights 400/500/600/650). Orange theme (brand `--brand #ea580c`, gradient orange → amber; Campus accent is green, ERM blue). No third-party assets.
 
 Product sites: pypecrm.com · pypeerm.com · pypecampus.com (set in `PRODUCTS` in `src/data/content.js`; used by the header "Log in" / "Request access" dropdowns, product pages and the footer).
 
