@@ -120,7 +120,7 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <Logo light /><p>PypeCRM for any team that sells, PypeERM for educational institutions, and Pype Campus for schools.</p>
-            {done ? <p style={{ marginTop: 18, color: '#ffc999' }}>You’re on the list ✓</p> : <form className="subscribe" onSubmit={(e) => { e.preventDefault(); setDone(true); }}><input type="email" required placeholder="Your email" aria-label="Email" /><button>Subscribe</button></form>}
+            {done ? <p style={{ marginTop: 18, color: '#b9eeb0' }}>You’re on the list ✓</p> : <form className="subscribe" onSubmit={(e) => { e.preventDefault(); setDone(true); }}><input type="email" required placeholder="Your email" aria-label="Email" /><button>Subscribe</button></form>}
             <div className="site-links">{PRODUCT_SITES.map((p) => <a key={p.key} href={p.url} target="_blank" rel="noopener noreferrer">{p.domain} ↗</a>)}</div><div className="social">{['X', 'in', 'f', '▶', 'ig'].map((s) => <a key={s} href="#" aria-label={s} onClick={(e) => e.preventDefault()}>{s}</a>)}</div>
           </div>
           {FOOTER.map((c) => <div key={c.title}><h6>{c.title}</h6><ul>{c.links.map(([l, to]) => <li key={to}><Link to={to}>{l}</Link></li>)}</ul></div>)}
@@ -138,7 +138,11 @@ function Footer() {
 export default function Layout() {
   const { pathname, hash } = useLocation();
   const [top, setTop] = useState(false);
-  useEffect(() => { if (!hash) window.scrollTo(0, 0); }, [pathname, hash]);
+  useEffect(() => {
+    if (!hash) { window.scrollTo(0, 0); return undefined; }
+    const id = setTimeout(() => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+    return () => clearTimeout(id);
+  }, [pathname, hash]);
   useEffect(() => { const f = () => setTop(window.scrollY > 700); window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f); }, []);
   useEffect(() => {
     const a = document.getElementById('announce'); const set = () => document.documentElement.style.setProperty('--announce-h', `${a ? a.offsetHeight : 0}px`);

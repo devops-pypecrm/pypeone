@@ -110,7 +110,7 @@ export function Integrations() {
   return (<><Seo title="Integrations | PypeOne" />
     <PageHero eyebrow="Integrations" title="Connect the channels and devices you use" lead="Advertising, messaging, payments, devices and a public API." actions={false}><Reveal delay={0.15} style={{ marginTop: 28, display: 'flex', justifyContent: 'center' }}><Search value={q} onChange={setQ} placeholder="Search integrations" /></Reveal></PageHero>
     <section className="section" style={{ paddingTop: 32 }}><div className="wrap"><Chips items={cats} value={cat} onChange={setCat} />
-      <div className="grid g4">{list.map(([n, c, d]) => <div key={n} className="card hov" style={{ padding: 22 }}><div className="ico" style={{ background: 'var(--grad)', color: '#fff' }}>{n[0]}</div><span className="badge">{c}</span><h3 style={{ fontSize: 17 }}>{n}</h3><p style={{ fontSize: 14 }}>{d}</p></div>)}</div>
+      <div className="grid g4">{list.map(([n, c, d]) => <div key={n} className="card hov" style={{ padding: 22 }}><div className="ico" style={{ background: 'var(--grad)', color: '#0b2512' }}>{n[0]}</div><span className="badge">{c}</span><h3 style={{ fontSize: 17 }}>{n}</h3><p style={{ fontSize: 14 }}>{d}</p></div>)}</div>
       {!list.length && <p className="center muted">No integrations match.</p>}
     </div></section><CTA title="Need something specific?" text="Use the public API or ask us about a custom integration." primary={['Contact us', '/contact/contact-sales']} secondary={null} /></>);
 }
@@ -150,7 +150,7 @@ export function ContactSales() {
 export function Demo() {
   return (<><Seo title="Watch the demo | PypeOne" />
     <PageHero eyebrow="Demo" title="See PypeOne in under 10 minutes" lead="A guided tour of the CRM, the ERM and campus management." actions={false}>
-      <Reveal className="hero-mock"><div style={{ maxWidth: 900, margin: '0 auto', aspectRatio: '16/9', borderRadius: 24, background: 'var(--bg-dark)', display: 'grid', placeItems: 'center', position: 'relative', overflow: 'hidden' }}><div className="blob" style={{ width: 300, height: 300, background: '#ea580c', left: '10%', top: '10%' }} /><button className="btn btn-primary btn-lg" style={{ position: 'relative', borderRadius: '50%', width: 88, height: 88, fontSize: 28 }} aria-label="Play demo">▶</button></div></Reveal>
+      <Reveal className="hero-mock"><div style={{ maxWidth: 900, margin: '0 auto', aspectRatio: '16/9', borderRadius: 24, background: 'var(--bg-dark)', display: 'grid', placeItems: 'center', position: 'relative', overflow: 'hidden' }}><div className="blob" style={{ width: 300, height: 300, background: '#7bd76f', left: '10%', top: '10%' }} /><button className="btn btn-primary btn-lg" style={{ position: 'relative', borderRadius: '50%', width: 88, height: 88, fontSize: 28 }} aria-label="Play demo">▶</button></div></Reveal>
     </PageHero>
     <section className="section" style={{ paddingTop: 120 }}><div className="wrap" style={{ maxWidth: 560 }}><SectionHead title="Prefer a live walkthrough?" /><div className="card" style={{ padding: 32 }}><ContactForm fields={['name', 'email', 'company', 'interest']} submit="Book a live demo" /></div></div></section></>);
 }

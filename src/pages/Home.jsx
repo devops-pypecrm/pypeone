@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import NeuralOrb from '../components/NeuralOrb';
+import { ArrowRight, Play } from 'lucide-react';
+import AiWaves from '../components/AiWaves';
 import { Btn, Reveal, SectionHead, Tabs, Stats, CTA, Carousel, Photo } from '../components/ui';
 import AppMock from '../components/AppMock';
 import { PRODUCTS, SOLUTIONS, STATS, LIFECYCLE } from '../data/content';
@@ -16,24 +16,26 @@ const PERSONAS = [
 ];
 const FEATURED = ['sales-teams', 'multi-branch-businesses', 'schools', 'colleges-universities'];
 
-const PROMPTS = ['Which leads should we call first today?', 'Which programs are behind on admissions this term?', 'Which students need attention this month?', 'What are competitors in my city charging?'];
-
-/** Animated "coming soon" teaser for Pype AI. */
+/** Home "Pype AI" teaser: copy on the left, animated dotted-particle waves + glass orb art on the right (canvas). */
 function AiTeaser() {
-  const [i, setI] = useState(0);
-  useEffect(() => { const id = setInterval(() => setI((x) => (x + 1) % PROMPTS.length), 3400); return () => clearInterval(id); }, []);
   return (
     <section className="section dark ai-teaser" aria-labelledby="ai-teaser-h">
+      <AiWaves />
       <div className="wrap ai-teaser-in">
-        <div>
-          <Reveal><span className="soon-badge"><i /> Coming soon</span></Reveal>
-          <Reveal delay={0.05}><h2 id="ai-teaser-h" className="h2" style={{ marginTop: 16 }}>Pype AI: one centralized brain for your whole bundle</h2></Reveal>
-          <Reveal delay={0.1}><p className="lead" style={{ marginTop: 16 }}>We are building a single AI that learns from PypeCRM, PypeERM and Pype Campus, and from knowledge across the web, to answer, draft and suggest. You stay in control of every action.</p></Reveal>
-          <Reveal delay={0.15}><div className="prompt-ticker" aria-live="polite"><span className="prompt-label">Ask Pype AI</span><span key={i} className="prompt-text">{PROMPTS[i]}</span></div></Reveal>
-          <Reveal delay={0.2}><ul className="check ai-checks"><li>One brain across your products</li><li>Knowledge from the web, with sources cited</li><li>Human-approved actions, permission-aware</li></ul></Reveal>
-          <Reveal delay={0.25} className="btn-row"><Btn to="/ai" size="lg">Explore Pype AI</Btn><Btn to="/ai#waitlist" variant="light" size="lg">Join the waitlist</Btn></Reveal>
+        <div className="ai-teaser-copy">
+          <Reveal>
+            <span className="ai-pill">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg-ai" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#4fbf55" /><stop offset=".6" stopColor="#7bd76f" /><stop offset="1" stopColor="#c4ef7e" /></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg-ai)" /><path d="M11 9h6a5 5 0 010 10h-3v4h-3z" fill="#0b2512" /></svg>
+              Pype AI <i /> <em>Coming soon</em>
+            </span>
+          </Reveal>
+          <Reveal delay={0.05}><h2 id="ai-teaser-h">Ask. Decide. <span className="grad-text">Grow.</span></h2></Reveal>
+          <Reveal delay={0.1}><p>Pype AI is the centralized AI brain we are building for the PypeOne bundle: one system that learns from your products and from knowledge across the web, with you approving every action.</p></Reveal>
+          <Reveal delay={0.15} className="ai-cta">
+            <Link to="/ai" className="ai-btn-solid">Explore Pype AI <ArrowRight size={18} /></Link>
+            <Link to="/ai#waitlist" className="ai-btn-ghost"><span>Join the waitlist</span><i><Play size={14} fill="currentColor" /></i></Link>
+          </Reveal>
         </div>
-        <Reveal delay={0.1} className="ai-teaser-orb"><NeuralOrb label="Animated neural orb connecting PypeCRM, PypeERM, Pype Campus and the web" /></Reveal>
       </div>
     </section>
   );
@@ -44,8 +46,8 @@ export default function Home() {
     <>
       <Seo title="PypeOne — CRM, ERM and school management from one team" />
       <section className="hero center">
-        <div className="blob" style={{ width: 320, height: 320, background: '#ffb77a', left: '-60px', top: 40 }} />
-        <div className="blob" style={{ width: 280, height: 280, background: '#ffd37a', right: '-40px', top: 120, animationDelay: '-4s' }} />
+        <div className="blob" style={{ width: 320, height: 320, background: '#8fe27f', left: '-60px', top: 40 }} />
+        <div className="blob" style={{ width: 280, height: 280, background: '#c9f08a', right: '-40px', top: 120, animationDelay: '-4s' }} />
         <div className="wrap" style={{ position: 'relative' }}>
           <Reveal><Link to="/products" className="pill"><b>PypeOne</b> Three products, one bundle →</Link></Reveal>
           <Reveal delay={0.05}><h1 className="h1">The software that runs your <span className="grad-text">growth and operations</span></h1></Reveal>
@@ -112,7 +114,7 @@ export default function Home() {
       <section className="section dark">
         <div className="wrap" style={{ maxWidth: 900 }}>
           <SectionHead eyebrow="What changes for each person" title="Less chasing. More time for what matters." />
-          <Carousel slides={PERSONAS} render={([t, d]) => <div className="center"><span className="badge" style={{ background: '#4a2c14', color: '#ffd9b3' }}>{t}</span><p className="quote">{d}</p></div>} />
+          <Carousel slides={PERSONAS} render={([t, d]) => <div className="center"><span className="badge" style={{ background: '#1d4a2a', color: '#d6f5cf' }}>{t}</span><p className="quote">{d}</p></div>} />
         </div>
       </section>
 

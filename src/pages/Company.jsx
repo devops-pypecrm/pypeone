@@ -20,12 +20,12 @@ export function Careers() {
       <div className="wrap" style={{ maxWidth: 560, marginTop: 56 }}><SectionHead title="Send an open application" /><div className="card" style={{ padding: 32 }}><ContactForm fields={['name', 'email', 'message']} submit="Send application" done="Thanks! We will be in touch if there is a fit." /></div></div></section></>);
 }
 export function Brand() {
-  const sw = [['Violet', '#ea580c'], ['Pink', '#ef4a5a'], ['Orange', '#f59e0b'], ['Ink', '#1c120b'], ['Mist', '#fff6ee']];
+  const sw = [['Violet', '#7bd76f'], ['Pink', '#ef4a5a'], ['Orange', '#f59e0b'], ['Ink', '#0f1f12'], ['Mist', '#f2fbef']];
   return (<><Seo title="Brand | PypeOne" />
     <PageHero eyebrow="Brand" title="PypeOne brand guidelines" lead="Use our name, logo and colours consistently." actions={false} />
     <section className="section" style={{ paddingTop: 24 }}><div className="wrap"><SectionHead left eyebrow="Name" title="PypeOne and its products" />
       <div className="grid g4">{[['PypeOne', 'The bundle'], ['PypeCRM', 'Admissions & sales'], ['PypeERM', 'Institution ERP'], ['Pype Campus', 'School management']].map(([n, s]) => <div key={n} className="card"><h3>{n}</h3><p>{s}</p></div>)}</div>
-      <SectionHead left eyebrow="Colour" title="Palette" /><div className="swatches">{sw.map(([n, h]) => <div key={n} className="sw-i" style={{ background: h, color: n === 'Mist' ? '#1c120b' : '#fff' }}><div>{n}<small>{h}</small></div></div>)}</div>
+      <SectionHead left eyebrow="Colour" title="Palette" /><div className="swatches">{sw.map(([n, h]) => <div key={n} className="sw-i" style={{ background: h, color: n === 'Mist' ? '#0f1f12' : '#fff' }}><div>{n}<small>{h}</small></div></div>)}</div>
       <SectionHead left eyebrow="Typography" title="Plus Jakarta Sans" /><div className="card"><h2 className="h1" style={{ fontSize: 56 }}>Aa Bb Cc 123</h2><p className="muted">One family throughout: Plus Jakarta Sans, weights 400 to 800. Headings 700–800; body 400–500.</p></div>
       <SectionHead left eyebrow="Usage" title="Do and don’t" /><div className="grid g2"><div className="card"><h3>Do</h3><ul className="check"><li>Write “PypeOne” as one word with a capital P and O</li><li>Keep clear space equal to the logo mark height</li></ul></div><div className="card"><h3>Don’t</h3><ul className="check"><li>Stretch, rotate or recolour the logo</li><li>Place the logo on busy backgrounds</li></ul></div></div></div></section></>);
 }
@@ -46,7 +46,7 @@ export function Auth({ mode }) {
     <section className="section" style={{ minHeight: '70vh', display: 'grid', alignItems: 'center' }}><div className="wrap" style={{ maxWidth: 460 }}>
       <div className="card" style={{ padding: 36 }}><h1 className="h2" style={{ fontSize: 30, marginBottom: 8 }}>{signup ? 'Request access' : 'Welcome back'}</h1><p className="muted" style={{ marginBottom: 22 }}>{signup ? 'Choose the product you want access to. You will go to its own site.' : 'Choose your product to log in at its own site.'}</p>
         <div className="prod-grid">{PRODUCT_SITES.map((p) => <a key={p.key} className="prod-link" href={p.url} target="_blank" rel="noopener noreferrer"><span className={`mi-icon ${p.accent}`}>{p.icon}</span><span style={{ flex: 1 }}><b>{p.name}</b><small>{p.domain}</small></span><span>↗</span></a>)}</div>
-        <p className="center muted" style={{ marginTop: 18, fontSize: 14 }}>{signup ? <>Have an account? <Link to="/login" style={{ color: 'var(--brand)', fontWeight: 500 }}>Log in</Link></> : <>New here? <Link to="/signup" style={{ color: 'var(--brand)', fontWeight: 500 }}>Request access</Link></>}</p></div></div></section></>);
+        <p className="center muted" style={{ marginTop: 18, fontSize: 14 }}>{signup ? <>Have an account? <Link to="/login" style={{ color: 'var(--brand-text)', fontWeight: 500 }}>Log in</Link></> : <>New here? <Link to="/signup" style={{ color: 'var(--brand-text)', fontWeight: 500 }}>Request access</Link></>}</p></div></div></section></>);
 }
 export function NotFound() {
   return (<><Seo title="Page not found | PypeOne" /><section className="notfound"><div><h1 className="h1 grad-text">404</h1><p className="lead" style={{ margin: '16px auto 28px' }}>We couldn’t find that page.</p><Btn to="/">Back home</Btn></div></section></>);

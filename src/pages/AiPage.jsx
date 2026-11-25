@@ -122,7 +122,7 @@ export default function AiPage() {
       <section className="section dark">
         <div className="wrap">
           <SectionHead eyebrow="AI in the products today" title="Focused AI today. A central brain next." lead="Each product already has focused AI features. Pype AI is the next step: one brain behind them." />
-          <div className="grid g3">{[['PypeCRM', 'Lead scoring', 'Ranks incoming leads by engagement and quality, so reps know who to call first.', Phone], ['PypeERM', 'AI report builder', 'Describe the report you need and get it built.', Settings], ['Pype Campus', 'Early warning', 'Flags students whose marks or attendance are slipping and drafts a note for the teacher to approve.', School]].map(([n, t, d, Icon], i) => <Reveal key={n} delay={i * 0.08} className="card hov"><div className="ico"><Icon size={22} strokeWidth={1.75} /></div><span className="badge" style={{ background: '#4a2c14', color: '#ffd9b3' }}>{n}</span><h3>{t}</h3><p>{d}</p></Reveal>)}</div>
+          <div className="grid g3">{[['PypeCRM', 'Lead scoring', 'Ranks incoming leads by engagement and quality, so reps know who to call first.', Phone], ['PypeERM', 'AI report builder', 'Describe the report you need and get it built.', Settings], ['Pype Campus', 'Early warning', 'Flags students whose marks or attendance are slipping and drafts a note for the teacher to approve.', School]].map(([n, t, d, Icon], i) => <Reveal key={n} delay={i * 0.08} className="card hov"><div className="ico"><Icon size={22} strokeWidth={1.75} /></div><span className="badge" style={{ background: '#1d4a2a', color: '#d6f5cf' }}>{n}</span><h3>{t}</h3><p>{d}</p></Reveal>)}</div>
         </div>
       </section>
 

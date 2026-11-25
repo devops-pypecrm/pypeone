@@ -6,7 +6,7 @@ const P = (t, d) => ({ t, d });
 
 export const PRODUCTS = {
   pypecrm: {
-    name: 'PypeCRM', short: 'CRM', icon: '☎', accent: 'orange', url: 'https://pypecrm.com', domain: 'pypecrm.com', mock: 'board', stage: 'Capture → Convert',
+    name: 'PypeCRM', short: 'CRM', icon: '☎', accent: 'green', url: 'https://pypecrm.com', domain: 'pypecrm.com', mock: 'board', stage: 'Capture → Convert',
     tagline: 'The sales and customer engine',
     title: 'Turn every lead into a customer',
     sub: 'Capture leads from ads, WhatsApp, web forms and calls into one inbox, route them to the right rep instantly, and follow each one to a closed deal.',
@@ -24,7 +24,7 @@ export const PRODUCTS = {
     points: [P('Admissions to enrolment', 'Online applications, document verification and enrolment approval.'), P('Study-centre networks', 'Onboard centres by invitation link with verification and wallets.'), P('Finance and collections', 'Fee schedules, payment links, receipts, GST settings and receivables.'), P('HR and payroll', 'Biometric and selfie attendance, leave workflows and payroll batches.'), P('Classes and faculty', 'Batches, lessons, online sessions, assessments and student progress.'), P('Role-based dashboards', 'CEO, finance, HR, sales, operations, faculty, centre and student views.')],
   },
   pypecampus: {
-    name: 'Pype Campus', short: 'Campus', icon: '✎', accent: 'green', url: 'https://pypecampus.com', domain: 'pypecampus.com', mock: 'heatmap', stage: 'Teach → Engage',
+    name: 'Pype Campus', short: 'Campus', icon: '✎', accent: 'orange', url: 'https://pypecampus.com', domain: 'pypecampus.com', mock: 'heatmap', stage: 'Teach → Engage',
     tagline: 'The school management system',
     title: 'One system that runs a school',
     sub: 'Admissions, fees, attendance, exams, report cards, payroll, transport and a parent and student portal, with progress tracking from the first day a student joins.',

@@ -8,7 +8,7 @@ The public website for **PypeOne**, a bundle of three products with different au
 | **PypeERM** | ERP for **educational institutions only**: admissions, study centres, finance, HR, LMS, ops | `Pype-ERM` repo: Prisma schema, `FeaturesPage.tsx`, `LandingMore.tsx` |
 | **Pype Campus** | School management: fees, attendance, exams, transport, portal (audience: schools) | `report/Pype_Campus_Report.pdf` and pitch decks |
 
-Vite + React + React Router. Font: Plus Jakarta Sans (variable, weights 400/500/600/650). Orange theme (brand `--brand #ea580c`, gradient orange → amber; Campus accent is green, ERM blue). No third-party assets.
+Vite + React + React Router. Font: Plus Jakarta Sans (variable, weights 400/500/600/650). Green theme: brand `#7bd76f` (`--brand`, with `--brand-text #2b8a3a` for text on white and dark text on bright fills); product accents CRM green, ERM blue, Campus orange. No third-party assets.
 
 Product sites: pypecrm.com · pypeerm.com · pypecampus.com (set in `PRODUCTS` in `src/data/content.js`; used by the header "Log in" / "Request access" dropdowns, product pages and the footer).
 
@@ -26,7 +26,7 @@ npm run build:seo              # build + prerender every route + sitemap.xml + r
 - `src/pages/ProductPage.jsx` – one template for products / modules / solutions / roles.
 
 ## Pype AI (coming soon)
-`/ai` is a dedicated page with an animated canvas neural orb (`src/components/NeuralOrb.jsx`), a how-it-works flow, capabilities, an illustrative Q&A demo, roadmap, FAQ and a waitlist form (prototype: stores nothing). A matching animated teaser sits on the home page and the footer links to it. Everything is labelled planned / coming soon.
+`/ai` is a dedicated page with an animated canvas neural orb (`src/components/NeuralOrb.jsx`), a how-it-works flow, capabilities, an illustrative Q&A demo, roadmap, FAQ and a waitlist form (prototype: stores nothing). The home page has a matching animated section (`src/components/AiWaves.jsx`: dotted particle waves, glass orb, orbiting nodes) and the footer links to it. Everything is labelled planned / coming soon.
 The product name and site URL live in `src/data/site.js` (`AI_NAME`, `SITE_URL`). **`SITE_URL` is a placeholder** (`https://pypeone.com`): set the real domain before launch; canonical tags, the sitemap and structured data all use it.
 
 ## SEO
