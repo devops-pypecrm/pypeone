@@ -310,3 +310,6 @@ h1, h2 { font-weight: 650; } h3, h4, h5, h6 { font-weight: 600; } .btn { font-we
 @media (max-width: 900px) { .ai-teaser { padding: 80px 0 330px; } .ai-teaser-in { min-height: 0; } }
 
 .pill b, .step::before, .person .pic { color: #0b2512; }
+
+/* Hover menus are text-only: no icons */
+.mega-item { padding: 9px 12px; } .dd .dd-prod { padding: 9px 12px; }

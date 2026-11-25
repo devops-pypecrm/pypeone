@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Logo, Btn, Chev } from './ui';
-import MenuIcon from './MenuIcon';
 import { MENUS, TOP_LINKS, COMPANY_MENU, FOOTER, PRODUCT_SITES } from '../data/nav';
 
 /** One nav entry. Open/close state and the single shared close-timer live in <Header>, so moving
@@ -18,7 +17,7 @@ function Mega({ m, idx, open, show, hide, toggle }) {
           <div className="wrap mega-in">
             <div className="mega-cols">{m.cols.map((c) => (
               <div className="mega-col" key={c.title}><h6>{c.title}</h6>{c.head && <Link to={c.head.to} className="mega-head">{c.head.label} →</Link>}
-                {c.items.map((it) => <Link key={it.to} to={it.to} className="mega-item" role="menuitem"><span className="mi-icon"><MenuIcon name={it.ico} fallback={it.icon} /></span><span><div className="mi-t">{it.label}{it.soon && <span className="soon">Soon</span>}</div>{it.desc && <div className="mi-d">{it.desc}</div>}</span></Link>)}
+                {c.items.map((it) => <Link key={it.to} to={it.to} className="mega-item" role="menuitem"><span><div className="mi-t">{it.label}{it.soon && <span className="soon">Soon</span>}</div>{it.desc && <div className="mi-d">{it.desc}</div>}</span></Link>)}
               </div>))}</div>
             <Link to={m.feature.to} className="mega-side"><span className="tag">{m.feature.tag}</span><h5>{m.feature.title}</h5><p>{m.feature.desc}</p><span className="btn btn-dark" style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>Learn more →</span></Link>
           </div>
@@ -45,7 +44,7 @@ function ProductLinks({ label, className, align = 'right' }) {
         <div className="dd-h">{label === 'Log in' ? 'Log in to' : 'Request access to'}</div>
         {PRODUCT_SITES.map((p) => (
           <a key={p.key} href={p.url} target="_blank" rel="noopener noreferrer" role="menuitem" className="dd-prod">
-            <span className="mi-icon"><MenuIcon name={p.ico} fallback={p.icon} /></span><span><b>{p.name}</b><small>{p.domain} ↗</small></span>
+            <span><b>{p.name}</b><small>{p.domain} ↗</small></span>
           </a>))}
       </div>
     </div>
