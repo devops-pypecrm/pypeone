@@ -423,3 +423,6 @@ h1, h2 { font-weight: 650; } h3, h4, h5, h6 { font-weight: 600; } .btn { font-we
 .sc-stats { bottom: 80px; } .sc-counter { bottom: 86px; }
 @media (max-width: 900px) { .sc-stats { bottom: 66px; right: 72px; } .sc-next { width: 84px; height: 42px; } .sc-next:hover { height: 46px; } }
 @media (max-width: 900px) { .sc-stats { bottom: 56px; height: auto; } .sc-stats-in { inset: auto 0 0 0; } }
+
+/* showcase: no inner nav row; mobile copy moves up */
+@media (max-width: 900px) { .sc-copy { top: 24px; } .sc-device-zone { top: 210px; } }

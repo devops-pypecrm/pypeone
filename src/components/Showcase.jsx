@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowUpRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { LogoMark } from './ui';
 
 /**
@@ -70,17 +70,6 @@ export default function Showcase() {
   return (
     <section ref={secRef} className="showcase" style={{ height: `${SLIDES.length * 100 + 40}vh` }} aria-label="PypeOne products">
       <div className="sc-stage">
-        {/* nav row */}
-        <div className="sc-top wrap">
-          <div className="sc-brand"><LogoMark light className="sc-mark" /><span>Products</span></div>
-          <nav className="sc-tabs" aria-label="Choose a product">
-            {SLIDES.map((s, i) => <button key={s.key} className={i === active ? 'on' : ''} aria-current={i === active} onClick={() => goTo(i)}>{s.name}</button>)}
-          </nav>
-          <div className="sc-pill-wrap">
-            {SLIDES.map((s, i) => <a key={s.key} className={`sc-pill ${state(i)}`} href={s.url} target="_blank" rel="noopener noreferrer" tabIndex={i === active ? 0 : -1}>{s.domain}<ArrowUpRight size={16} /></a>)}
-          </div>
-        </div>
-
         {/* giant faded words */}
         {SLIDES.map((s, i) => <div key={`g${s.key}`} className={`sc-ghost ${state(i)}`} aria-hidden="true">{s.ghost}</div>)}
         {SLIDES.map((s, i) => <div key={`n${s.key}`} className={`sc-num ${state(i)}`} aria-hidden="true">{s.num}</div>)}
