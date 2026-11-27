@@ -28,6 +28,9 @@ npm run build:seo              # build + prerender every route + sitemap.xml + r
 ## Home hero
 `src/components/HeroSilk.jsx`: a rounded card with a faint grid, animated SVG silk ribbons (requestAnimationFrame morph, paused off-screen, static under reduced motion), floating chips, a glossy CTA and an "ask" bar that routes a plain-language need to the right product (keyword rules in `ROUTES`).
 
+## Product showcase (home)
+`src/components/Showcase.jsx`: a pinned, scroll-driven section with one slide per product. Text cross-fades with a stagger and a device (phone for PypeCRM, laptop for PypeERM, tablet for Pype Campus) rises into the centre. Device screens are real screenshots of the product pages in `public/screens/`; regenerate them after changing those pages with `npm run build && npm run screens`.
+
 ## Pype AI (coming soon)
 `/ai` is a dedicated page with an animated canvas neural orb (`src/components/NeuralOrb.jsx`), a how-it-works flow, capabilities, an illustrative Q&A demo, roadmap, FAQ and a waitlist form (prototype: stores nothing). The home page has a matching animated section (`src/components/AiWaves.jsx`: dotted particle waves, glass orb, orbiting nodes) and the footer links to it. Everything is labelled planned / coming soon.
 The product name and site URL live in `src/data/site.js` (`AI_NAME`, `SITE_URL`). **`SITE_URL` is a placeholder** (`https://pypeone.com`): set the real domain before launch; canonical tags, the sitemap and structured data all use it.

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
 import AiWaves from '../components/AiWaves';
 import HeroSilk from '../components/HeroSilk';
+import Showcase from '../components/Showcase';
 import { LogoMark, Btn, Reveal, SectionHead, Tabs, Stats, CTA, Carousel, Photo } from '../components/ui';
 import AppMock from '../components/AppMock';
 import { PRODUCTS, SOLUTIONS, STATS, LIFECYCLE } from '../data/content';
@@ -49,24 +50,7 @@ export default function Home() {
       <Seo title="PypeOne — CRM, ERM and school management from one team" />
       <HeroSilk />
 
-      <section className="section">
-        <div className="wrap">
-          <SectionHead eyebrow="Three products. One bundle." title="The right tool for how you work" lead="Each product is its own platform, built for its own audience. PypeOne is how you bundle them." />
-          <div className="grid g3">
-            {Object.entries(PRODUCTS).map(([k, p], i) => (
-              <Reveal key={k} delay={i * 0.1}>
-                <Link to={`/products/${k}`} className={`card product-card ${p.accent}`}>
-                  <div className="ico">{p.icon}</div><span className="stage">{p.stage}</span>
-                  <h3>{p.name}</h3><strong style={{ display: 'block', margin: '-2px 0 10px', color: 'var(--ink-2)', fontWeight: 500 }}>{p.tagline}</strong>
-                  <p>{p.sub}</p>
-                  <p className="muted" style={{ marginTop: 12, fontSize: 14 }}>For: {p.audience}</p>
-                  <ul className="check" style={{ margin: '14px 0 0' }}>{p.points.slice(0, 3).map((x) => <li key={x.t}>{x.t}</li>)}</ul>
-                  <span className="more">Explore {p.name} →</span>
-                </Link>
-              </Reveal>))}
-          </div>
-        </div>
-      </section>
+      <Showcase />
 
       <section className="section soft">
         <div className="wrap">

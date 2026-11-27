@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:seo": "vite build && node scripts/prerender.mjs"
+    "build:seo": "vite build && node scripts/prerender.mjs",
+    "screens": "node scripts/screens.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.79.0",
