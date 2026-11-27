@@ -352,3 +352,9 @@ h1, h2 { font-weight: 650; } h3, h4, h5, h6 { font-weight: 600; } .btn { font-we
 .silk-hero { padding: 0; background: #fbfbfa; }
 .silk-card { border-radius: 0; box-shadow: none; }
 @media (max-width: 860px) { .silk-card { border-radius: 0; } }
+
+/* ============ Pype.One logo ============ */
+.logo { gap: 10px; } .logo .logo-mark { width: 30px; height: 31px; flex: none; }
+.logo-word { font-family: var(--font-d); font-weight: 800; font-size: 23px; letter-spacing: -.02em; line-height: 1; }
+.logo-pype { color: #0a1230; } .logo-one { color: #1fc02d; } .logo-light .logo-pype { color: #fff; }
+.ai-pill .ai-pill-mark { width: 24px; height: 25px; margin-left: 4px; }

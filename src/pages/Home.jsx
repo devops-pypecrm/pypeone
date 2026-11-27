@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
 import AiWaves from '../components/AiWaves';
 import HeroSilk from '../components/HeroSilk';
-import { Btn, Reveal, SectionHead, Tabs, Stats, CTA, Carousel, Photo } from '../components/ui';
+import { LogoMark, Btn, Reveal, SectionHead, Tabs, Stats, CTA, Carousel, Photo } from '../components/ui';
 import AppMock from '../components/AppMock';
 import { PRODUCTS, SOLUTIONS, STATS, LIFECYCLE } from '../data/content';
 import { Seo } from './shared';
@@ -27,7 +27,7 @@ function AiTeaser() {
         <div className="ai-teaser-copy">
           <Reveal>
             <span className="ai-pill">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg-ai" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#4fbf55" /><stop offset=".6" stopColor="#7bd76f" /><stop offset="1" stopColor="#c4ef7e" /></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg-ai)" /><path d="M11 9h6a5 5 0 010 10h-3v4h-3z" fill="#0b2512" /></svg>
+              <LogoMark light className="ai-pill-mark" />
               Pype AI <i /> <em>Coming soon</em>
             </span>
           </Reveal>

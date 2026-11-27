@@ -2,14 +2,23 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PHOTOS } from '../data/photos';
 
+/** PypeOne four-square symbol. `light` swaps the black squares to white for dark backgrounds. */
+export function LogoMark({ light, className = 'logo-mark' }) {
+  const ink = light ? '#fff' : '#000', green = '#1fc02d';
+  return (
+    <svg className={className} viewBox="0 0 343 350" aria-hidden="true">
+      <rect x="0" y="0" width="180" height="170" rx="38" fill={ink} /><rect x="213" y="0" width="102" height="103" rx="24" fill={green} />
+      <rect x="193" y="132" width="148" height="143" rx="32" fill={ink} /><rect x="10" y="204" width="154" height="143" rx="34" fill={green} />
+    </svg>
+  );
+}
+
+/** Pype.One wordmark lockup used in the header and footer. */
 export function Logo({ light }) {
   return (
-    <Link to="/" className="logo" aria-label="PypeOne home" style={light ? { color: '#fff' } : undefined}>
-      <svg className="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#4fbf55" /><stop offset=".6" stopColor="#7bd76f" /><stop offset="1" stopColor="#c4ef7e" /></linearGradient></defs>
-        <rect width="32" height="32" rx="9" fill="url(#lg)" /><path d="M11 9h6a5 5 0 010 10h-3v4h-3z" fill="#fff" />
-      </svg>
-      PypeOne
+    <Link to="/" className={`logo ${light ? 'logo-light' : ''}`} aria-label="Pype.One home">
+      <LogoMark light={light} />
+      <span className="logo-word"><span className="logo-pype">Pype.</span><span className="logo-one">One</span></span>
     </Link>
   );
 }
