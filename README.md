@@ -25,6 +25,9 @@ npm run build:seo              # build + prerender every route + sitemap.xml + r
 - `src/components/AppMock.jsx` – 14 animated, education-themed UI mocks (sample data only).
 - `src/pages/ProductPage.jsx` – one template for products / modules / solutions / roles.
 
+## Home hero
+`src/components/HeroSilk.jsx`: a rounded card with a faint grid, animated SVG silk ribbons (requestAnimationFrame morph, paused off-screen, static under reduced motion), floating chips, a glossy CTA and an "ask" bar that routes a plain-language need to the right product (keyword rules in `ROUTES`).
+
 ## Pype AI (coming soon)
 `/ai` is a dedicated page with an animated canvas neural orb (`src/components/NeuralOrb.jsx`), a how-it-works flow, capabilities, an illustrative Q&A demo, roadmap, FAQ and a waitlist form (prototype: stores nothing). The home page has a matching animated section (`src/components/AiWaves.jsx`: dotted particle waves, glass orb, orbiting nodes) and the footer links to it. Everything is labelled planned / coming soon.
 The product name and site URL live in `src/data/site.js` (`AI_NAME`, `SITE_URL`). **`SITE_URL` is a placeholder** (`https://pypeone.com`): set the real domain before launch; canonical tags, the sitemap and structured data all use it.

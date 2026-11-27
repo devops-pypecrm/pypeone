@@ -313,3 +313,37 @@ h1, h2 { font-weight: 650; } h3, h4, h5, h6 { font-weight: 600; } .btn { font-we
 
 /* Hover menus are text-only: no icons */
 .mega-item { padding: 9px 12px; } .dd .dd-prod { padding: 9px 12px; }
+
+/* ============ Home hero: silk card (reference-matched) ============ */
+.silk-hero { background: #e9eae8; padding: 18px 18px 22px; }
+.silk-card { position: relative; overflow: hidden; border-radius: 28px; background: #fbfbfa; min-height: 680px; padding: 92px 24px 40px; box-shadow: 0 1px 0 #fff inset, 0 30px 60px -40px rgba(0, 0, 0, .25); isolation: isolate; }
+.silk-card::before { content: ''; position: absolute; left: 0; top: 0; width: 150px; height: 150px; z-index: 3; background: linear-gradient(135deg, #d9dbd7 0%, #f6f7f5 49%, transparent 50.5%); filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, .08)); }
+.silk-grid { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(#ececea 1px, transparent 1px), linear-gradient(90deg, #ececea 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 30%, transparent 80%); mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 30%, transparent 80%); }
+.silk { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+.silk-copy { position: relative; z-index: 2; text-align: center; max-width: 980px; margin: 0 auto; }
+.silk-h1 { font-size: clamp(36px, 5.4vw, 72px); font-weight: 500; letter-spacing: -.035em; line-height: 1.08; color: #111; }
+.i-dot { position: relative; display: inline-block; }
+.i-dot::before { content: ''; position: absolute; left: 50%; top: .2em; width: .12em; height: .12em; transform: translateX(-50%); background: #45b94c; }
+.accent-stop { color: #45b94c; }
+.silk-sub { max-width: 520px; margin: 22px auto 34px; font-size: 15px; line-height: 1.6; color: #6b6e6a; }
+.btn-gloss { display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 10px; background: linear-gradient(#3b3d3a, #121312); color: #fff; font-weight: 600; font-size: 15px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 12px 22px -8px rgba(0, 0, 0, .5), 0 0 0 5px rgba(0, 0, 0, .04); transition: transform .2s, box-shadow .2s; }
+.btn-gloss span { color: #7bd76f; font-weight: 700; } .btn-gloss:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 18px 28px -10px rgba(0, 0, 0, .55), 0 0 0 5px rgba(123, 215, 111, .18); }
+.silk-ask { display: flex; gap: 10px; align-items: center; justify-content: center; margin: 68px auto 0; max-width: 520px; }
+.silk-input { flex: 1; display: flex; align-items: center; gap: 10px; padding: 0 8px 0 16px; height: 46px; border-radius: 12px; background: rgba(255, 255, 255, .9); border: 1px solid #e4e5e2; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .25); color: #444; backdrop-filter: blur(4px); }
+.silk-input input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: 14px; color: #222; } .silk-input input::placeholder { color: #9a9d98; }
+.silk-input:focus-within { border-color: #7bd76f; box-shadow: 0 0 0 4px rgba(123, 215, 111, .2); }
+.silk-send { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; color: #555; } .silk-send:hover { background: #f1f2ef; color: #111; }
+.silk-diamond { width: 46px; height: 46px; border-radius: 50%; background: #fff; border: 1px solid #e4e5e2; display: grid; place-items: center; box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .3); transition: transform .2s; } .silk-diamond:hover { transform: scale(1.06); }
+.silk-diamond i { width: 12px; height: 12px; background: #45b94c; transform: rotate(45deg); border-radius: 2px; }
+.silk-chip { position: absolute; z-index: 2; padding: 5px 11px; border-radius: 99px; background: #fff; border: 1px solid #ebebe8; box-shadow: 0 6px 14px -8px rgba(0, 0, 0, .3); font-size: 11.5px; font-weight: 500; color: #4a4d49; white-space: nowrap; animation: chipfloat 7s ease-in-out infinite; }
+.silk-chip.c1 { right: 5%; top: 9%; transform: rotate(-6deg); } .silk-chip.c2 { right: 13%; top: 36%; animation-delay: -1.5s; } .silk-chip.c3 { right: 26%; top: 57%; transform: rotate(-4deg); animation-delay: -3s; }
+.silk-chip.c4 { left: 13%; bottom: 16%; transform: rotate(6deg); animation-delay: -2s; } .silk-chip.c5 { left: 2%; bottom: 7%; transform: rotate(8deg); animation-delay: -4s; } .silk-chip.c6 { left: 47%; top: 61%; animation-delay: -5s; }
+@keyframes chipfloat { 50% { translate: 0 -6px; } }
+.silk-logos { position: relative; z-index: 2; display: flex; justify-content: center; gap: 44px; flex-wrap: wrap; margin-top: 70px; color: #a4a7a2; font-weight: 600; font-size: 16px; }
+.silk-logos span { display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 860px) {
+  .silk-card { padding: 64px 16px 32px; min-height: 0; border-radius: 22px; } .silk-card::before { width: 90px; height: 90px; }
+  .silk-chip.c2, .silk-chip.c3, .silk-chip.c6, .silk-chip.c5 { display: none; } .silk-chip.c1 { top: 3%; } .silk-chip.c4 { bottom: 4%; }
+  .silk-ask { margin-top: 44px; } .silk-logos { gap: 18px 26px; font-size: 14px; margin-top: 48px; }
+}
+@media (prefers-reduced-motion: reduce) { .silk-chip { animation: none; } }

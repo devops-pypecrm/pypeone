@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
 import AiWaves from '../components/AiWaves';
+import HeroSilk from '../components/HeroSilk';
 import { Btn, Reveal, SectionHead, Tabs, Stats, CTA, Carousel, Photo } from '../components/ui';
 import AppMock from '../components/AppMock';
 import { PRODUCTS, SOLUTIONS, STATS, LIFECYCLE } from '../data/content';
 import { Seo } from './shared';
 
+// eslint-disable-next-line no-unused-vars
 const WHO = ['Sales teams', 'Multi-branch businesses', 'Agencies', 'Real estate', 'Clinics', 'Colleges', 'Schools', 'Coaching institutes', 'Study-centre networks'];
 const PERSONAS = [
   ['Sales teams', 'Every lead captured, routed and scored, with calls and WhatsApp on one timeline so no enquiry goes cold.'],
@@ -45,20 +47,7 @@ export default function Home() {
   return (
     <>
       <Seo title="PypeOne — CRM, ERM and school management from one team" />
-      <section className="hero center">
-        <div className="blob" style={{ width: 320, height: 320, background: '#8fe27f', left: '-60px', top: 40 }} />
-        <div className="blob" style={{ width: 280, height: 280, background: '#c9f08a', right: '-40px', top: 120, animationDelay: '-4s' }} />
-        <div className="wrap" style={{ position: 'relative' }}>
-          <Reveal><Link to="/products" className="pill"><b>PypeOne</b> Three products, one bundle →</Link></Reveal>
-          <Reveal delay={0.05}><h1 className="h1">The software that runs your <span className="grad-text">growth and operations</span></h1></Reveal>
-          <Reveal delay={0.1}><p className="lead">PypeCRM for any team that sells. PypeERM for educational institutions. Pype Campus for schools. Each runs on its own platform. Choose one, or take the bundle.</p></Reveal>
-          <Reveal delay={0.15} className="btn-row"><Btn to="/contact/contact-sales" size="lg">Book a demo</Btn><Btn to="/products" variant="ghost" size="lg">Explore the products</Btn></Reveal>
-          <Reveal delay={0.2}><p className="hero-note">Start with one product · Add the rest when you’re ready · Web and mobile</p></Reveal>
-          <Reveal delay={0.25} className="hero-mock"><AppMock variant="board" theme="sales" style={{ maxWidth: 980, margin: '0 auto' }} /></Reveal>
-        </div>
-      </section>
-
-      <div className="logos wrap"><p>Built for</p><div className="marquee"><div className="marquee-track">{[...WHO, ...WHO].map((n, k) => <span key={k}>{n}</span>)}</div></div></div>
+      <HeroSilk />
 
       <section className="section">
         <div className="wrap">
