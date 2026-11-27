@@ -347,3 +347,8 @@ h1, h2 { font-weight: 650; } h3, h4, h5, h6 { font-weight: 600; } .btn { font-we
   .silk-ask { margin-top: 44px; } .silk-logos { gap: 18px 26px; font-size: 14px; margin-top: 48px; }
 }
 @media (prefers-reduced-motion: reduce) { .silk-chip { animation: none; } }
+
+/* Hero is full-bleed: no outer margin, no rounded card */
+.silk-hero { padding: 0; background: #fbfbfa; }
+.silk-card { border-radius: 0; box-shadow: none; }
+@media (max-width: 860px) { .silk-card { border-radius: 0; } }
