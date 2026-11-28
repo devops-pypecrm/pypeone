@@ -29,7 +29,7 @@ export default function AiWaves({ className = '' }) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    const glow = (x, y, rad, c0, c1 = 'rgba(123, 215, 111, 0)') => {
+    const glow = (x, y, rad, c0, c1 = 'rgba(210, 189, 126, 0)') => {
       const g = ctx.createRadialGradient(x, y, 0, x, y, rad);
       g.addColorStop(0, c0); g.addColorStop(1, c1);
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.2832); ctx.fill();
@@ -44,12 +44,12 @@ export default function AiWaves({ className = '' }) {
       const cy = mobile ? H - R * 1.55 : H * 0.5;
 
       // ambient glow behind everything
-      glow(cx, cy, R * 3.2, 'rgba(123, 215, 111, .2)');
+      glow(cx, cy, R * 3.2, 'rgba(210, 189, 126, .2)');
 
       // twinkling stars
       stars.forEach((s) => {
         const a = 0.15 + 0.35 * (0.5 + 0.5 * Math.sin(t * 1.3 + s.p));
-        ctx.fillStyle = `rgba(215, 250, 205, ${a})`;
+        ctx.fillStyle = `rgba(247, 240, 218, ${a})`;
         ctx.fillRect(s.x * W, s.y * H, s.r, s.r);
       });
 
@@ -69,7 +69,7 @@ export default function AiWaves({ className = '' }) {
             const calm = mobile ? (y < H * 0.6 ? 0.28 : 1) : 0.26 + 0.74 * Math.min(1, Math.max(0, (nx - 0.2) / 0.38));
             const a = Math.max(0.03, (0.12 + 0.7 * sweep * sweep) * edge) * calm;
             const r = 0.7 + 1.1 * sweep * edge;
-            ctx.fillStyle = sweep > 0.82 ? `rgba(214, 250, 160, ${a})` : `rgba(123, 215, 111, ${a})`;
+            ctx.fillStyle = sweep > 0.82 ? `rgba(240, 225, 180, ${a})` : `rgba(210, 189, 126, ${a})`;
             ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
           }
         }
@@ -77,14 +77,14 @@ export default function AiWaves({ className = '' }) {
 
       // glass sphere
       let g = ctx.createRadialGradient(cx - R * 0.3, cy - R * 0.35, R * 0.1, cx, cy, R);
-      g.addColorStop(0, 'rgba(160, 235, 150, .10)'); g.addColorStop(0.65, 'rgba(10, 45, 22, .28)'); g.addColorStop(1, 'rgba(123, 215, 111, .30)');
+      g.addColorStop(0, 'rgba(231, 214, 164, .10)'); g.addColorStop(0.65, 'rgba(42, 35, 13, .28)'); g.addColorStop(1, 'rgba(210, 189, 126, .30)');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.fill();
-      glow(cx, cy + R * 0.95, R * 0.9, 'rgba(123, 215, 111, .5)');                    // bottom light
+      glow(cx, cy + R * 0.95, R * 0.9, 'rgba(210, 189, 126, .5)');                    // bottom light
       ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.clip();
       glow(cx - R * 0.35, cy - R * 0.55, R * 0.7, 'rgba(255, 255, 255, .22)', 'rgba(255, 255, 255, 0)');   // top-left sheen
       ctx.restore();
-      ctx.lineWidth = 1.5; ctx.strokeStyle = 'rgba(170, 240, 150, .6)'; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.stroke();
-      ctx.lineWidth = 6; ctx.strokeStyle = 'rgba(123, 215, 111, .08)'; ctx.beginPath(); ctx.arc(cx, cy, R - 3, 0, 6.2832); ctx.stroke();
+      ctx.lineWidth = 1.5; ctx.strokeStyle = 'rgba(235, 218, 165, .6)'; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.stroke();
+      ctx.lineWidth = 6; ctx.strokeStyle = 'rgba(210, 189, 126, .08)'; ctx.beginPath(); ctx.arc(cx, cy, R - 3, 0, 6.2832); ctx.stroke();
 
       // orbit rings + travelling nodes
       const rings = [
@@ -94,16 +94,16 @@ export default function AiWaves({ className = '' }) {
       ];
       rings.forEach((rg) => {
         ctx.save(); ctx.translate(cx, cy); ctx.rotate(rg.rot);
-        ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(150, 235, 140, .34)'; ctx.beginPath(); ctx.ellipse(0, 0, rg.rx, rg.ry, 0, 0, 6.2832); ctx.stroke();
+        ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(230, 211, 155, .34)'; ctx.beginPath(); ctx.ellipse(0, 0, rg.rx, rg.ry, 0, 0, 6.2832); ctx.stroke();
         rg.nodes.forEach(([ph, sp]) => {
           const a = ph + t * sp;
           for (let k = 14; k >= 0; k--) {                                              // fading trail behind the node
             const aa = a - k * 0.045 * Math.sign(sp), px = Math.cos(aa) * rg.rx, py = Math.sin(aa) * rg.ry;
-            ctx.fillStyle = `rgba(190, 245, 170, ${0.5 * (1 - k / 15)})`; ctx.beginPath(); ctx.arc(px, py, 2.2 * (1 - k / 18), 0, 6.2832); ctx.fill();
+            ctx.fillStyle = `rgba(241, 227, 184, ${0.5 * (1 - k / 15)})`; ctx.beginPath(); ctx.arc(px, py, 2.2 * (1 - k / 18), 0, 6.2832); ctx.fill();
           }
           const px = Math.cos(a) * rg.rx, py = Math.sin(a) * rg.ry;
-          glow(px, py, 16, 'rgba(190, 255, 170, .85)', 'rgba(123, 215, 111, 0)');
-          ctx.fillStyle = '#eaffd9'; ctx.beginPath(); ctx.arc(px, py, 3.6, 0, 6.2832); ctx.fill();
+          glow(px, py, 16, 'rgba(242, 230, 193, .85)', 'rgba(210, 189, 126, 0)');
+          ctx.fillStyle = '#faf6e8'; ctx.beginPath(); ctx.arc(px, py, 3.6, 0, 6.2832); ctx.fill();
         });
         ctx.restore();
       });

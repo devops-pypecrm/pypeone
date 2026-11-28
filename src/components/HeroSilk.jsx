@@ -60,7 +60,7 @@ function Silk() {
   return (
     <svg ref={ref} className="silk" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
-        <linearGradient id="silk-fill" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".95" /><stop offset=".5" stopColor="#f3f4f2" stopOpacity=".7" /><stop offset="1" stopColor="#fff" stopOpacity=".9" /></linearGradient>
+        <linearGradient id="silk-fill" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stopColor="#fff" stopOpacity=".95" /><stop offset=".5" stopColor="#f8f8f7" stopOpacity=".7" /><stop offset="1" stopColor="#fff" stopOpacity=".9" /></linearGradient>
         <filter id="silk-blur" x="-10%" y="-10%" width="120%" height="140%"><feGaussianBlur stdDeviation="10" /></filter>
       </defs>
       {ITEMS.map((it, i) => <path key={i} data-silk="" d={it.d(0)} {...PROPS[it.kind]} />)}

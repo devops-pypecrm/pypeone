@@ -46,7 +46,7 @@ export default function NeuralOrb({ className = '', labels = true, density = 1, 
       // glow + breathing core
       const breathe = 1 + Math.sin(t * 1.4) * 0.06;
       let g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 2.1 * breathe);
-      g.addColorStop(0, 'rgba(150, 235, 140, .55)'); g.addColorStop(0.25, 'rgba(123, 215, 111, .28)'); g.addColorStop(1, 'rgba(7, 19, 10, 0)');
+      g.addColorStop(0, 'rgba(230, 211, 155, .55)'); g.addColorStop(0.25, 'rgba(210, 189, 126, .28)'); g.addColorStop(1, 'rgba(18, 16, 8, 0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 
       // project neurons
@@ -59,7 +59,7 @@ export default function NeuralOrb({ className = '', labels = true, density = 1, 
       // rings behind
       const ring = (rx, ry, rot, alpha, dash) => {
         ctx.save(); ctx.translate(cx, cy); ctx.rotate(rot); ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(170, 240, 160, ${alpha})`; ctx.lineWidth = 1; ctx.setLineDash(dash); ctx.stroke(); ctx.restore();
+        ctx.strokeStyle = `rgba(236, 221, 174, ${alpha})`; ctx.lineWidth = 1; ctx.setLineDash(dash); ctx.stroke(); ctx.restore();
       };
       ring(R * 1.55, R * 0.55, -0.35 + t * 0.03, 0.22, []);
       ring(R * 1.85, R * 0.7, 0.5 - t * 0.02, 0.14, [4, 8]);
@@ -68,7 +68,7 @@ export default function NeuralOrb({ className = '', labels = true, density = 1, 
       ctx.lineWidth = 0.8; ctx.setLineDash([]);
       edges.forEach(([i, j]) => {
         const d = (P[i].d + P[j].d) / 2;
-        ctx.strokeStyle = `rgba(123, 215, 111, ${0.05 + d * 0.3})`;
+        ctx.strokeStyle = `rgba(210, 189, 126, ${0.05 + d * 0.3})`;
         ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
       });
 
@@ -77,20 +77,20 @@ export default function NeuralOrb({ className = '', labels = true, density = 1, 
         if (!reduce) { p.p += p.v * 0.016; if (p.p > 1) { p.p = 0; p.e = Math.floor(Math.random() * edges.length); } }
         const [i, j] = edges[p.e], x = P[i].x + (P[j].x - P[i].x) * p.p, y = P[i].y + (P[j].y - P[i].y) * p.p, d = (P[i].d + P[j].d) / 2;
         const pg = ctx.createRadialGradient(x, y, 0, x, y, 7);
-        pg.addColorStop(0, `rgba(210, 250, 150, ${0.35 + d * 0.65})`); pg.addColorStop(1, 'rgba(210, 250, 150, 0)');
+        pg.addColorStop(0, `rgba(238, 222, 172, ${0.35 + d * 0.65})`); pg.addColorStop(1, 'rgba(238, 222, 172, 0)');
         ctx.fillStyle = pg; ctx.beginPath(); ctx.arc(x, y, 7, 0, 6.283); ctx.fill();
       });
 
       // neurons
       nodes.forEach((n, i) => {
         const tw = 0.6 + 0.4 * Math.sin(t * 2 + n.ph), rr = 1 + P[i].d * 2.2 * tw;
-        ctx.fillStyle = `rgba(215, 250, 205, ${0.25 + P[i].d * 0.75})`;
+        ctx.fillStyle = `rgba(247, 240, 218, ${0.25 + P[i].d * 0.75})`;
         ctx.beginPath(); ctx.arc(P[i].x, P[i].y, rr, 0, 6.283); ctx.fill();
       });
 
       // bright core
       g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.5 * breathe);
-      g.addColorStop(0, 'rgba(255, 255, 255, .55)'); g.addColorStop(0.4, 'rgba(190, 245, 170, .25)'); g.addColorStop(1, 'rgba(123, 215, 111, 0)');
+      g.addColorStop(0, 'rgba(255, 255, 255, .55)'); g.addColorStop(0.4, 'rgba(241, 227, 184, .25)'); g.addColorStop(1, 'rgba(210, 189, 126, 0)');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 0.5 * breathe, 0, 6.283); ctx.fill();
 
       // orbiting source chips
@@ -103,9 +103,9 @@ export default function NeuralOrb({ className = '', labels = true, density = 1, 
         }).sort((p, q) => p.front - q.front).forEach(({ s, x, y, front }) => {
           const w = ctx.measureText(s).width + 22, h = 24;
           ctx.globalAlpha = front ? 1 : 0.55;
-          ctx.fillStyle = 'rgba(15, 42, 23, .85)'; ctx.strokeStyle = 'rgba(160, 235, 150, .55)'; ctx.lineWidth = 1;
+          ctx.fillStyle = 'rgba(40, 34, 17, .85)'; ctx.strokeStyle = 'rgba(231, 214, 164, .55)'; ctx.lineWidth = 1;
           ctx.beginPath(); ctx.roundRect(x - w / 2, y - h / 2, w, h, 12); ctx.fill(); ctx.stroke();
-          ctx.fillStyle = '#effbe9'; ctx.fillText(s, x, y + 0.5); ctx.globalAlpha = 1;
+          ctx.fillStyle = '#fcf9f2'; ctx.fillText(s, x, y + 0.5); ctx.globalAlpha = 1;
         });
       }
     };

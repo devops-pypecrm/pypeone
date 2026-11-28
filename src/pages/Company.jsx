@@ -20,12 +20,12 @@ export function Careers() {
       <div className="wrap" style={{ maxWidth: 560, marginTop: 56 }}><SectionHead title="Send an open application" /><div className="card" style={{ padding: 32 }}><ContactForm fields={['name', 'email', 'message']} submit="Send application" done="Thanks! We will be in touch if there is a fit." /></div></div></section></>);
 }
 export function Brand() {
-  const sw = [['Violet', '#7bd76f'], ['Pink', '#ef4a5a'], ['Orange', '#f59e0b'], ['Ink', '#0f1f12'], ['Mist', '#f2fbef']];
+  const sw = [['Violet', '#f3d983'], ['Pink', '#ef4a5a'], ['Orange', '#f59e0b'], ['Ink', '#1e1a10'], ['Mist', '#fbf9f3']];
   return (<><Seo title="Brand | PypeOne" />
     <PageHero eyebrow="Brand" title="PypeOne brand guidelines" lead="Use our name, logo and colours consistently." actions={false} />
     <section className="section" style={{ paddingTop: 24 }}><div className="wrap"><SectionHead left eyebrow="Name" title="PypeOne and its products" />
       <div className="grid g4">{[['PypeOne', 'The bundle'], ['PypeCRM', 'Admissions & sales'], ['PypeERM', 'Institution ERP'], ['Pype Campus', 'School management']].map(([n, s]) => <div key={n} className="card"><h3>{n}</h3><p>{s}</p></div>)}</div>
-      <SectionHead left eyebrow="Colour" title="Palette" /><div className="swatches">{sw.map(([n, h]) => <div key={n} className="sw-i" style={{ background: h, color: n === 'Mist' ? '#0f1f12' : '#fff' }}><div>{n}<small>{h}</small></div></div>)}</div>
+      <SectionHead left eyebrow="Colour" title="Palette" /><div className="swatches">{sw.map(([n, h]) => <div key={n} className="sw-i" style={{ background: h, color: n === 'Mist' ? '#1e1a10' : '#fff' }}><div>{n}<small>{h}</small></div></div>)}</div>
       <SectionHead left eyebrow="Typography" title="Plus Jakarta Sans" /><div className="card"><h2 className="h1" style={{ fontSize: 56 }}>Aa Bb Cc 123</h2><p className="muted">One family throughout: Plus Jakarta Sans, weights 400 to 800. Headings 700–800; body 400–500.</p></div>
       <SectionHead left eyebrow="Usage" title="Do and don’t" /><div className="grid g2"><div className="card"><h3>Do</h3><ul className="check"><li>Write “PypeOne” as one word with a capital P and O</li><li>Keep clear space equal to the logo mark height</li></ul></div><div className="card"><h3>Don’t</h3><ul className="check"><li>Stretch, rotate or recolour the logo</li><li>Place the logo on busy backgrounds</li></ul></div></div></div></section></>);
 }

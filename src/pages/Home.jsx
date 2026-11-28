@@ -87,7 +87,7 @@ export default function Home() {
       <section className="section dark">
         <div className="wrap" style={{ maxWidth: 900 }}>
           <SectionHead eyebrow="What changes for each person" title="Less chasing. More time for what matters." />
-          <Carousel slides={PERSONAS} render={([t, d]) => <div className="center"><span className="badge" style={{ background: '#1d4a2a', color: '#d6f5cf' }}>{t}</span><p className="quote">{d}</p></div>} />
+          <Carousel slides={PERSONAS} render={([t, d]) => <div className="center"><span className="badge" style={{ background: '#473d20', color: '#f4eeda' }}>{t}</span><p className="quote">{d}</p></div>} />
         </div>
       </section>
 

@@ -57,7 +57,7 @@ function AI() {
 function Transport() {
   const stops = ['School', 'Lakeview', 'Metro Stn', 'Green Park', 'Home'];
   return <div style={{ display: 'grid', gap: 16 }}>
-    <div style={{ position: 'relative', padding: '18px 8px' }}><div style={{ height: 4, borderRadius: 4, background: '#e1eddd' }}><div style={{ height: 4, width: '55%', borderRadius: 4, background: 'var(--grad)', animation: 'grow 1.4s both', transformOrigin: 'left' }} /></div>
+    <div style={{ position: 'relative', padding: '18px 8px' }}><div style={{ height: 4, borderRadius: 4, background: '#f0ede5' }}><div style={{ height: 4, width: '55%', borderRadius: 4, background: 'var(--grad)', animation: 'grow 1.4s both', transformOrigin: 'left' }} /></div>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: -9 }}>{stops.map((s, i) => <div key={s} style={{ textAlign: 'center', width: 60 }}><div className={`dot ${i < 3 ? 'd' : ''}`} style={{ margin: '0 auto 6px', background: i < 3 ? 'var(--green)' : '#fff' }} /><small>{s}</small></div>)}</div></div>
     <div className="lst"><div className="lst-r"><span /><span>Student</span><span>Tap in</span><span>Tap out</span><span>Parent</span></div>{[['Aisha Khan', '7:42', '—', 'Notified'], ['Dev Patel', '7:48', '—', 'Notified'], ['Nila Roy', '—', '—', 'Not boarded']].map((r, i) => <div className="lst-r" key={r[0]} style={d(i)}><span className={`dot ${i < 2 ? 'd' : ''}`} /><b>{r[0]}</b><span>{r[1]}</span><span>{r[2]}</span><span className={`chip ${i < 2 ? 'c-g' : 'c-o'}`}>{r[3]}</span></div>)}</div></div>;
 }
@@ -71,7 +71,7 @@ function Heatmap() {
   const v = (a, b) => [88, 62, 74, 91, 55, 80, 94, 48, 69, 83, 77, 85, 52, 90, 70, 66, 81, 93, 58, 72, 86, 79, 64, 89, 75, 95, 61, 84, 68, 87][(a * 5 + b) % 30];
   const col = (x) => (x >= 85 ? '#22c55e' : x >= 70 ? '#9be3c2' : x >= 60 ? '#ffd36e' : '#ff8d8d');
   return <div style={{ display: 'grid', gridTemplateColumns: '64px repeat(5, 1fr)', gap: 4 }}><span />{subj.map((s) => <b key={s} style={{ textAlign: 'center', color: 'var(--ink-3)', fontSize: 10 }}>{s}</b>)}
-    {stu.map((n, a) => [<b key={n}>{n}</b>, ...subj.map((s, b) => <div key={n + s} style={{ background: col(v(a, b)), borderRadius: 6, height: 28, display: 'grid', placeItems: 'center', fontWeight: 600, color: '#0f1f12', animation: 'pop .5s both', animationDelay: `${(a + b) * 0.04}s` }}>{v(a, b)}</div>)])}</div>;
+    {stu.map((n, a) => [<b key={n}>{n}</b>, ...subj.map((s, b) => <div key={n + s} style={{ background: col(v(a, b)), borderRadius: 6, height: 28, display: 'grid', placeItems: 'center', fontWeight: 600, color: '#1e1a10', animation: 'pop .5s both', animationDelay: `${(a + b) * 0.04}s` }}>{v(a, b)}</div>)])}</div>;
 }
 
 /* ---- Sales-themed variants (used for PypeCRM and business solutions) ---- */
