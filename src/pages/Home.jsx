@@ -3,6 +3,7 @@ import { ArrowRight, Play } from 'lucide-react';
 import AiWaves from '../components/AiWaves';
 import HeroSilk from '../components/HeroSilk';
 import Showcase from '../components/Showcase';
+import Journey from '../components/Journey';
 import { LogoMark, Btn, Reveal, SectionHead, Tabs, Stats, CTA, Carousel, Photo } from '../components/ui';
 import AppMock from '../components/AppMock';
 import { PRODUCTS, SOLUTIONS, STATS, LIFECYCLE } from '../data/content';
@@ -52,17 +53,7 @@ export default function Home() {
 
       <Showcase />
 
-      <section className="section soft">
-        <div className="wrap">
-          <SectionHead eyebrow="From lead to daily operations" title="Covers every step, end to end" lead="Each stage is handled by the product built for it, each on its own platform. Where you start depends on what you do." />
-          <div className="life">
-            {LIFECYCLE.map(([s, pk, d], i) => (
-              <Reveal key={s} delay={i * 0.06} className={`life-step ${PRODUCTS[pk].accent}`}>
-                <span className="life-n">{i + 1}</span><b>{s}</b><small>{d}</small><span className="life-p">{PRODUCTS[pk].name}</span>
-              </Reveal>))}
-          </div>
-        </div>
-      </section>
+      <Journey />
 
       <AiTeaser />
 

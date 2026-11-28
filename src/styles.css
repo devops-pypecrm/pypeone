@@ -426,3 +426,42 @@ h1, h2 { font-weight: 650; } h3, h4, h5, h6 { font-weight: 600; } .btn { font-we
 
 /* showcase: no inner nav row; mobile copy moves up */
 @media (max-width: 900px) { .sc-copy { top: 24px; } .sc-device-zone { top: 210px; } }
+
+/* ============ Journey: zig-zag step cards with dashed connectors ============ */
+.journey { padding: 110px 0 120px; background: #fff; }
+.jr-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; }
+.jr-intro h2 { font-size: clamp(34px, 4.2vw, 56px); font-weight: 500; letter-spacing: -.03em; line-height: 1.08; max-width: 720px; color: #171717; }
+.jr-intro p { margin-top: 22px; max-width: 520px; font-size: 15px; line-height: 1.6; color: #555; }
+.jr-legend { display: flex; align-items: flex-end; flex: none; }
+.jr-legend .lg { display: flex; align-items: flex-end; padding: 14px 16px; width: 130px; font-size: 14px; font-weight: 500; color: #333; }
+.lg.campus { height: 52px; background: #f3f3f2; } .lg.erm { height: 78px; background: #ecebe7; } .lg.crm { height: 112px; background: #f3d983; color: #3d3210; order: 3; }
+.jr-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(96px, auto); column-gap: 7%; row-gap: 22px; }
+.jr-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.jr-lines path { fill: none; stroke: #b6a774; stroke-width: 1.4; stroke-dasharray: 5 6; animation: jrdash 1.6s linear infinite; }
+@keyframes jrdash { to { stroke-dashoffset: -22; } }
+.jr-card { position: relative; z-index: 1; display: flex; gap: 22px; padding: 18px 26px 22px 18px; border-radius: 26px; background: #f7f7f6; min-height: 190px; align-self: start; transition: transform .3s, box-shadow .3s; }
+.jr-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(60, 50, 20, .35); }
+.jr-card.crm { background: #fcf6e2; }
+.jr-card.c1 { margin-left: 6%; } .jr-card.c2 { margin-left: 14%; margin-right: -6%; } .jr-card.c3 { margin-left: 4%; } .jr-card.c4 { margin-left: 6%; } .jr-card.c5 { margin-left: 10%; } .jr-card.c6 { margin-left: 18%; }
+.jr-pill { flex: none; width: 46px; border-radius: 99px; display: grid; place-items: center; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12.5px; font-weight: 600; letter-spacing: .03em; color: #fff; background: #222; padding: 18px 0; }
+.jr-card.crm .jr-pill { background: #836f32; color: #fdf3d2; } .jr-card.erm .jr-pill { background: #1f1f1f; } .jr-card.campus .jr-pill { background: #c26a0b; color: #fff4e3; }
+.jr-body { display: flex; flex-direction: column; justify-content: space-between; gap: 22px; padding-top: 6px; }
+.jr-title { display: flex; align-items: center; gap: 14px; }
+.jr-ico { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: #444; flex: none; } .jr-card.crm .jr-ico { background: #f6e7b4; color: #6b5a24; }
+.jr-title h3 { font-size: 23px; font-weight: 500; letter-spacing: -.01em; color: #1a1a1a; }
+.jr-body p { font-size: 14px; line-height: 1.6; color: #4a4a4a; max-width: 360px; }
+@media (max-width: 900px) {
+  .journey { padding: 72px 0; } .jr-head { flex-direction: column; align-items: flex-start; margin-bottom: 40px; } .jr-legend .lg { width: 104px; font-size: 12.5px; }
+  .jr-grid { grid-template-columns: 1fr; grid-auto-rows: auto; row-gap: 34px; }
+  .jr-card { grid-row: auto !important; grid-column: 1 !important; margin: 0 !important; min-height: 0; }
+  .jr-card:not(:last-child)::after { content: ''; position: absolute; left: 41px; bottom: -34px; height: 34px; border-left: 1.5px dashed #b6a774; }
+  .jr-title h3 { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) { .jr-lines path { animation: none; } }
+
+/* journey spacing + legend order */
+.jr-grid { grid-auto-rows: minmax(118px, auto); row-gap: 26px; column-gap: 10%; }
+.jr-card { max-width: 520px; width: 100%; }
+.jr-card.c1, .jr-card.c3, .jr-card.c5 { justify-self: end; margin-left: 0; margin-right: 0; } .jr-card.c2 { margin-left: 10%; margin-right: 0; } .jr-card.c4 { margin-left: 4%; } .jr-card.c6 { margin-left: 14%; }
+.jr-card.c1 { margin-right: 6%; } .jr-card.c5 { margin-right: 10%; }
+.lg.campus { order: 1; } .lg.erm { order: 2; } .lg.crm { order: 3; }
