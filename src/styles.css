@@ -2,7 +2,7 @@
 :root {
   --ink: #1e1a10; --ink-2: #514d40; --ink-3: #7b776a; --line: #edeae2; --bg: #fff; --bg-soft: #fbf9f3; --bg-dark: #121008;
   --brand: #f3d983; --brand-text: #836f32; --pink: #ef4a5a; --orange: #f59e0b; --blue: #3b82f6; --green: #22c55e;
-  --grad: linear-gradient(120deg, #b79f57 0%, #f3d983 58%, #e8d28f 100%);
+  --grad: linear-gradient(120deg, #ecc96a 0%, #f3d983 55%, #f8e9b4 100%);
   --grad-soft: linear-gradient(135deg, #f8f4e8, #faf6ea 60%, #f9f3e4);
   --r-sm: 10px; --r: 16px; --r-lg: 24px; --shadow: 0 10px 30px -12px rgba(66, 54, 19, .22); --shadow-lg: 0 30px 70px -25px rgba(66, 54, 19, .35);
   --header-h: 72px; --max: 1200px;
