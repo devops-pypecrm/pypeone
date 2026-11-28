@@ -4,7 +4,7 @@ import { PHOTOS } from '../data/photos';
 
 /** PypeOne four-square symbol. `light` swaps the black squares to white for dark backgrounds. */
 export function LogoMark({ light, className = 'logo-mark' }) {
-  const ink = light ? '#fff' : '#000', green = '#1fc02d';
+  const ink = light ? '#fff' : '#000', green = '#e5b53d';
   return (
     <svg className={className} viewBox="0 0 343 350" aria-hidden="true">
       <rect x="0" y="0" width="180" height="170" rx="38" fill={ink} /><rect x="213" y="0" width="102" height="103" rx="24" fill={green} />
