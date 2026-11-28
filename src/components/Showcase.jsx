@@ -16,7 +16,7 @@ const SLIDES = [
     stats: [['7', 'Lead channels'], ['Auto', 'Lead routing'], ['Live', 'WhatsApp inbox'], ['Multi', 'Branch control']],
   },
   {
-    key: 'pypeerm', name: 'PypeERM', ghost: 'ERM', num: '02', device: 'phone', screen: '/screens/pypeerm-site-mobile.jpg', url: 'https://pypeerm.com', domain: 'pypeerm.com',
+    key: 'pypeerm', name: 'PypeERM', ghost: 'ERM', num: '02', device: 'laptop', screen: '/screens/pypeerm-site-desktop.jpg', url: 'https://pypeerm.com', domain: 'pypeerm.com',
     lead: 'The ERP for educational institutions',
     body: 'Admissions, study centres, finance, HR and payroll, classes and operations on shared student and finance data, so teams stop re-entering it. Built for colleges, universities, coaching institutes and study-centre networks.',
     stats: [['9', 'Core modules'], ['15+', 'Role dashboards'], ['Selfie', 'Punch-in attendance'], ['Online', 'Applications']],
